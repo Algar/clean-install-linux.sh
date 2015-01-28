@@ -1,0 +1,2 @@
+# OnePlusOne
+ATTR{idVendor}=="05c6", ATTR{idProduct}=="6764", SYMLINK+="libmtp-%k", ENV{ID_MTP_DEVICE}="1", ENV{ID_MEDIA_PLAYER}="1"
