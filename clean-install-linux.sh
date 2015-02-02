@@ -8,7 +8,7 @@ sudo apt-get -y upgrade
 ### DOCUMENTS
 
 # LaTeX
-sudo apt-get install -y latex
+sudo apt-get install -y latex texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
 
 # myspell languages
 sudo apt-get install -y myspell-en-gb myspell-en-us myspell-es myspell-fr-gut myspell-it
