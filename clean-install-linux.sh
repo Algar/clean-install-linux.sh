@@ -32,6 +32,18 @@ sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get -y install build-essential nodejs
 
+# configure npm locally to run -g without sudo and according to:
+# http://competa.com/blog/2014/12/how-to-run-npm-without-sudo/
+# 
+# "npm set prefix" can raise an ENOENT error in some distributions. First
+# line fixes it as reported in: https://github.com/npm/npm/issues/6592
+npm --prefix="" set prefix ""
+npm config set prefix ~/.npm
+echo 'export PATH="$PATH:$HOME/.npm/bin"' > ~/.bashrc
+echo 'export NODE_PATH="$NODE_PATH:$HOME/.npm/lib/node_modules"' > ~/.bashrc
+. ~/.bashrc
+sudo chown -R $USER:`id -g -n $USER` ~/.npm
+
 # emacs editor with .emacs configuration file
 sudo apt-get install -y emacs
 wget https://raw.githubusercontent.com/Algar/clean-install-linux.sh/master/.emacs -O ~/.emacs
