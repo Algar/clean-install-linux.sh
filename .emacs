@@ -47,5 +47,17 @@
 (add-to-list 'load-path "~/.emacs.d/")
 
 ;; load the packages, best not to include the ending ".el" or ".elc"
-(load "coffee-mode") ;; from 'https://github.com/defunkt/coffee-mode'
+;; (load "coffee-mode") ;; from 'https://github.com/defunkt/coffee-mode'
 
+
+;; Set encoding
+(prefer-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
+
+;; (set-keyboard-coding-system 'utf-8)
+
+;; 4 Spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
